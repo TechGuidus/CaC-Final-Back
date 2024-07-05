@@ -39,11 +39,9 @@ public class AutorServiceImpl implements AutorService {
     public Autor updateAutorById(long id, Autor autorActualizado) {
         Autor autorExistente = autorRepository.findById(id).orElse(null);
         if (autorExistente != null) {
-            // Actualiza los campos relevantes del autor existente
             autorExistente.setNombreCompleto(autorActualizado.getNombreCompleto());
-            // Agrega más campos según tus necesidades
+            autorExistente.setUpdated(autorActualizado.getUpdated());
 
-            // Guarda los cambios en la base de datos
             return autorRepository.save(autorExistente);
         }
         return null; // Autor no encontrado

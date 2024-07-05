@@ -2,19 +2,13 @@ package com.example.cac_final.entity;
 
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import java.util.Date;
+
 
 @Entity
 @Table(name = "book")
@@ -27,6 +21,8 @@ public class Book {
     private String titulo;
     private String isbn;
 
+
+
     @ManyToMany
     @JoinTable(
         name = "autor_has_book",
@@ -34,6 +30,15 @@ public class Book {
         inverseJoinColumns = @JoinColumn(name = "autor_id")
     )
     private List<Autor> autores;
+
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created", nullable = false, updatable = false)
+    private Date created;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "updated", nullable = false)
+    private Date updated;
 
     // Constructor, getters y setters
     public Book() {}
@@ -69,4 +74,22 @@ public class Book {
     public void setAutores(List<Autor> autores) {
         this.autores = autores;
     }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(java.util.Date date) {
+        this.updated = (Date) date;
+    }
+
+    
 }

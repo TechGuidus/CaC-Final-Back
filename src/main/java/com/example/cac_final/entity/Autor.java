@@ -1,8 +1,10 @@
 package com.example.cac_final.entity;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -16,9 +18,17 @@ public class Autor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre_completo")
+    @Column(name = "nombre_completo", nullable = false)
     private String nombreCompleto;
 
+    @Column(name = "create_time", nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime created;
+
+    @Column(name = "update_time", nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime updated;
+    
     @ManyToMany(mappedBy = "autores")
     @JsonIgnore
     private List<Book> books;
@@ -48,4 +58,35 @@ public class Autor {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public LocalDateTime getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(LocalDateTime updated) {
+        this.updated = updated;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        created = LocalDateTime.now();
+        updated = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updated = LocalDateTime.now();
+    }
+
+    
+
+    
 }

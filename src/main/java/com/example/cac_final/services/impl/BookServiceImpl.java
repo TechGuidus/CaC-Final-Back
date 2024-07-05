@@ -8,6 +8,8 @@ import com.example.cac_final.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +53,7 @@ public class BookServiceImpl implements BookService {
             bookExistente.setTitulo(bookActualizado.getTitulo());
             bookExistente.setIsbn(bookActualizado.getIsbn());
             bookExistente.setAutores(bookActualizado.getAutores());
+            bookExistente.setUpdated(new Date());
             return bookRepository.save(bookExistente);
         }
         return null;
