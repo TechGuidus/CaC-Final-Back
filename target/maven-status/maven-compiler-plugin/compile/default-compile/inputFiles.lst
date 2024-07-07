@@ -1,0 +1,15 @@
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/CacFinalApplication.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/controller/AutorController.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/controller/BookController.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/entity/Autor.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/entity/AutorHasBook.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/entity/Book.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/repository/AutorHasBookRespository.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/repository/AutorRepository.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/repository/BookRepository.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/services/AutorHasBookService.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/services/AutorService.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/services/BookService.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/services/impl/AutorHasBookImpl.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/services/impl/AutorServiceImpl.java
+/home/fliademasi/Escritorio/cac-final/src/main/java/com/example/cac_final/services/impl/BookServiceImpl.java
