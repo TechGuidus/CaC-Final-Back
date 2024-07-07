@@ -21,7 +21,7 @@ public class Autor {
     @Column(name = "nombre_completo", nullable = false)
     private String nombreCompleto;
 
-    @Column(name = "create_time", nullable = false)
+    @Column(name = "create_time", nullable = false )
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime created;
 

@@ -1,14 +1,10 @@
 package com.example.cac_final.entity;
 
-
-
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import jakarta.persistence.*;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "book")
@@ -21,8 +17,6 @@ public class Book {
     private String titulo;
     private String isbn;
 
-
-
     @ManyToMany
     @JoinTable(
         name = "autor_has_book",
@@ -31,13 +25,12 @@ public class Book {
     )
     private List<Autor> autores;
 
-
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created", nullable = false, updatable = false)
+    @Column(name = "create_time", nullable = false, updatable = false)
     private Date created;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated", nullable = false)
+    @Column(name = "update_time", nullable = false)
     private Date updated;
 
     // Constructor, getters y setters
@@ -87,9 +80,19 @@ public class Book {
         return updated;
     }
 
-    public void setUpdated(java.util.Date date) {
-        this.updated = (Date) date;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 
-    
+    @PrePersist
+    protected void onCreate() {
+        Date now = new Date();
+        created = now;
+        updated = now;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updated = new Date();
+    }
 }
