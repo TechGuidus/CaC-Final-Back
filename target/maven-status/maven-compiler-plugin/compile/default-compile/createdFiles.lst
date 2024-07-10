@@ -6,7 +6,9 @@ com/example/cac_final/services/AutorHasBookService.class
 com/example/cac_final/entity/Book.class
 com/example/cac_final/services/impl/AutorServiceImpl.class
 com/example/cac_final/services/BookService.class
+com/example/cac_final/controller/MainController.class
 com/example/cac_final/controller/BookController.class
+com/example/cac_final/controller/PruebaController.class
 com/example/cac_final/services/AutorService.class
 com/example/cac_final/repository/AutorRepository.class
 com/example/cac_final/entity/Autor.class
